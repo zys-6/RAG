@@ -73,10 +73,14 @@ Mounted routers:
 
 Current code also includes these important quirks:
 
-- `qa_router` is included twice in `src/rag/api.py`
 - `src/rag/controllers/user_config_manage.py` exists, but its router is not mounted
+- `docs/API-Reference.md` must continue to document mounted runtime-only routes such as `/qa/ocr-team`, `/qa/agent/request_agent`, `/qa/agent/mermaid_agent`, `/qa/agent/contract_agent`, and `/unit_aliases/*`
 
-Those quirks should be treated as compatibility-sensitive until regression coverage exists.
+Resolved under Stage 2 coverage on August 31, 2026:
+
+- the duplicate `qa_router` registration in `src/rag/api.py` was removed after Stage 1 route/OpenAPI checks were added
+
+The remaining quirks should be treated as compatibility-sensitive until regression coverage exists.
 
 ## Response envelope contract
 
@@ -198,6 +202,8 @@ These should be treated as a documentation/runtime mismatch, not silently delete
 - `/user_config_manage/create`
 - `/user_config_manage/delete`
 - `/user_config_manage/update`
+
+As of August 31, 2026, `docs/API-Reference.md` explicitly marks these `/user_config_manage/*` entries as controller-defined but currently unmounted.
 
 ## Streaming contract
 

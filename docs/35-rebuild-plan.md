@@ -36,13 +36,15 @@ Goal: define what must not break before refactoring internals.
 
 - [x] Create a compatibility baseline document for current entrypoints, ports, routes, envelopes, config keys, and `10.42.0.125` assumptions.
 - [x] Record the currently validated `10.42.0.125` topology in `33`.
-- [ ] Confirm whether `docs/API-Reference.md` fully matches runtime behavior, or mark every mismatch explicitly.
-- [ ] Decide which current quirks are intentionally preserved until later cleanup is test-backed.
+- [x] Confirm whether `docs/API-Reference.md` fully matches runtime behavior, or mark every mismatch explicitly.
+- [x] Decide which current quirks are intentionally preserved until later cleanup is test-backed.
 
 ### Exit criteria
 
 - `34` is the accepted compatibility reference.
 - Known documentation/runtime mismatches are listed instead of silently ignored.
+
+Stage 0 was closed in `~/rag` on August 31, 2026 by making `docs/API-Reference.md`, `34`, and `35` explicitly record the current mounted-only routes, the unmounted `/user_config_manage/*` controller surface, and the intentional `qa_router` double-include quirk.
 
 ## Stage 1 - Add regression and startup protection
 
@@ -68,11 +70,11 @@ Goal: improve naming and layout without changing external behavior.
 
 ### Checklist
 
-- [ ] Inventory naming problems and typo-like modules that can be cleaned safely.
+- [x] Inventory naming problems and typo-like modules that can be cleaned safely.
 - [ ] Clean obviously confusing names such as `knowledge_mange.py` only with compatibility shims or import-safe aliases where needed.
 - [ ] Review duplicate or cross-layer imports between `api`, `embedding`, and `rag`.
 - [ ] Remove or quarantine obvious backup, temporary, or runtime-artifact files that do not belong in active source trees.
-- [ ] Reduce duplicate router wiring or registration only after Stage 1 checks exist.
+- [x] Reduce duplicate router wiring or registration only after Stage 1 checks exist.
 - [ ] Keep existing response envelopes unchanged during this stage.
 - [ ] Keep configuration key names and precedence unchanged during this stage.
 
@@ -81,6 +83,11 @@ Goal: improve naming and layout without changing external behavior.
 - Internal structure is cleaner.
 - Public behavior still matches `34`.
 - Compatibility wrappers remain in place wherever internal moves would otherwise break imports.
+
+Stage 2 progress in `~/rag` on August 31, 2026:
+
+- [x] Removed the duplicate `qa_router` registration from `src/rag/api.py` after Stage 1 route/OpenAPI checks were in place.
+- [x] Added `docs/39-stage2-inventory.md` to record typo-like names, duplicate asset placement, cross-layer imports, and runtime-artifact candidates before broader cleanup.
 
 ## Stage 3 - Isolated bug fixes and behavior corrections
 

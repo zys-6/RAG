@@ -25,9 +25,22 @@ Enterprise document processing and RAG backend. All services expose Swagger at `
 |---------|----------------|
 | Document API | `{ "data", "detail", "status_code" }` |
 | RAG (most routes) | `{ "data", "detail", "status_code" }` |
-| RAG `/api_manage/*` | `{ "status", "detail", "data" }` |
+| RAG `/api_manage/*` and `/unit_aliases/*` | `{ "status", "detail", "data" }` |
 | QA streaming | `text/event-stream` (SSE) |
 | Embedding API | OpenAI-style JSON / `{ scores, softmax_scores }` |
+
+## Runtime parity notes
+
+This file is intentionally aligned to the current runtime, not to an idealized API surface.
+
+Known mismatches and quirks preserved as of August 31, 2026:
+
+- `/user_config_manage/*` is documented below because the controller exists, but those routes are not mounted by `src/rag/api.py`.
+- `/qa/ocr-team`, `/qa/agent/request_agent`, `/qa/agent/mermaid_agent`, `/qa/agent/contract_agent`, and `/unit_aliases/*` are mounted at runtime and should stay documented here even though they were missing from earlier snapshots.
+
+Resolved in Stage 2 on August 31, 2026:
+
+- `src/rag/api.py` no longer includes `qa_router` twice. The duplicate registration was removed after Stage 1 route/OpenAPI coverage was added.
 
 ---
 
@@ -127,6 +140,10 @@ Knowledge base, agents, Q&A, and API config management.
 | POST | `/qa/agent/week_agent` | body: task_id, query, thing_pattern, user_id | Weekly report agent (SSE) |
 | POST | `/qa/agent/template_agent` | body: task_id, query, thing_pattern, user_id, config_id | Template agent (SSE) |
 | POST | `/qa/agent/jira_week_agent` | body: task_id, query, thing_pattern, user_id | Jira weekly report agent (SSE) |
+| POST | `/qa/ocr-team` | body: team_id, file, creator_guid | OCR team template parse; JSON response |
+| POST | `/qa/agent/request_agent` | body: task_id, query, thing_pattern, user_id | Requirement assistant; custom success envelope |
+| POST | `/qa/agent/mermaid_agent` | body: task_id, query, thing_pattern, user_id | Mermaid diagram agent (SSE) |
+| POST | `/qa/agent/contract_agent` | body: task_id, query, thing_pattern, user_id | Contract assistant; JSON response |
 | POST | `/qa/qa_desc` | body: sql_query (dict), page (1), page_size (15) | SQL query table data |
 | POST | `/qa/get_status` | body: task_id | Get QA task status |
 | POST | `/qa/report` | body: query | Generate report file (binary download) |
@@ -167,7 +184,19 @@ Knowledge base, agents, Q&A, and API config management.
 | GET | `/api_manage/api_data_list` | query: page_on, page_size, api_name, field_name | Paginated field data |
 | DELETE | `/api_manage/api_data_delete` | body: api_name, field_name, data_list | Delete field data items |
 
+### Unit aliases — /unit_aliases
+
+| Method | Path | Parameters | Description |
+|--------|------|------------|-------------|
+| POST | `/unit_aliases/unit_insert` | body: data { name, aliases } | Create a unit alias record |
+| GET | `/unit_aliases/unit_search` | query: unit_name | Search a unit alias |
+| GET | `/unit_aliases/unit_list` | — | List all unit aliases |
+| POST | `/unit_aliases/unit_update` | body: unit_id, data { name?, aliases? } | Update a unit alias |
+| DELETE | `/unit_aliases/unit_delete` | query: unit_id | Delete a unit alias |
+
 ### User config — /user_config_manage
+
+The controller exists in `src/rag/controllers/user_config_manage.py`, but these routes are not currently mounted by `src/rag/api.py`.
 
 | Method | Path | Parameters | Description |
 |--------|------|------------|-------------|
