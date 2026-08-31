@@ -1,0 +1,4 @@
+redis_config:
+  host: "192.168.14.76"
+  port: 36379
+  database: 13

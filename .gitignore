@@ -1,0 +1,71 @@
+# Secrets & local env
+.env
+.env.*
+!.env.example
+**/app_config_pro.yaml
+**/app_config_dev.yaml
+!**/app_config_pro.yaml.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Runtime / generated data
+**/sqlite.db
+**/static/tmp/
+volumes/
+
+# ML models & caches (download separately)
+models/
+!models/**/config.json
+!models/**/README.md
+!models/**/tokenizer_config.json
+!models/**/preprocessor_config.json
+!models/**/sentence_bert_config.json
+
+# Docker exports & optional bundles
+*.tar
+*.tar.gz
+voice/
+
+# Junk / accidental large files
+src_jira_report.py
+
+# Test uploads & sample fragments
+src/api/static/fragment/
+src/api/static/file/
+src/static/tmp/
+
+# macOS metadata
+._*
+.DS_Store
+**/._.DS_Store
+
+# Backup / duplicate source
+*_bak.py
+*_bk.py
+*_bk2.*
+*_back.*
+* (1).py
+**/prompt_config_bk.yaml
+**/api_data_bk2.json
+**/api_data_back.json
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

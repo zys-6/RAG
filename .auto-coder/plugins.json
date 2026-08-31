@@ -1,0 +1,7 @@
+{
+    "plugin_dirs": [],
+    "plugins": [
+        "autocoder.plugins.git_helper_plugin.GitHelperPlugin",
+        "autocoder.plugins.token_helper_plugin.TokenHelperPlugin"
+    ]
+}

@@ -1,0 +1,71 @@
+version: "3.9"
+
+services:
+  document_fragment_api:
+    image: document_fragment:mupdf-3
+    ports:
+      - 12355:5005
+    volumes:
+      - ./src:/src
+      - ./models:/models
+      - ./models/.paddleocr:/root/.paddleocr
+    environment:
+      - DET_MODEL_PATH=${DET_MODEL_PATH}
+      - REG_MODEL_PATH=${REG_MODEL_PATH}
+      - DET_MODEL_DEVICE=${DET_MODEL_DEVICE}
+      - REG_MODEL_DEVICE=${REG_MODEL_DEVICE}
+      - MILVUS_URI=${MILVUS_URI}
+      - COLLECTION_NAME=${COLLECTION_NAME}
+      - TOKENIZE_URL=${TOKENIZE_URL}
+      - MODEL_NAME=${MODEL_NAME}
+      - EMBEDDING_URL=${EMBEDDING_URL}
+      - RERANK_URL=${RERANK_URL}
+    working_dir: /src
+    command: uvicorn api.main:app --host 0.0.0.0 --port 5005
+
+  embedding_api:
+    image: document_fragment:mupdf-3
+    ports:
+      - 12356:5006
+    volumes:
+      - ./src:/src
+      - ./models:/models
+    environment:
+      - EMBEDDING_MODEL_PATH=${EMBEDDING_MODEL_PATH}
+      - RERANKER_MODEL_PATH=${RERANKER_MODEL_PATH}
+      - COLLECTION_NAME=${COLLECTION_NAME}
+      - API_BASE=${API_BASE}
+      - API_BASE_URL=${API_BASE}
+      - API_KEY=${API_KEY}
+      - MODEL_NAME=${MODEL_NAME}
+      - API_KEY2=${API_KEY2}
+      - API_BASE_URL2=${API_BASE2}
+      - MODEL_NAME2=${MODEL_NAME2}
+      - MILVUS_URI=${MILVUS_URL}
+      - EMBEDDING_URL=${EMBEDDING_URL}
+      - RERANK_URL=${RERANK_URL}
+    working_dir: /src
+    command: uvicorn embedding.api:app --host 0.0.0.0 --port 5006
+
+  qa_api:
+    image: document_fragment:mupdf-3
+    ports:
+      - 12357:5007
+    volumes:
+      - ./src:/src
+    environment:
+      - COLLECTION_NAME=${COLLECTION_NAME}
+      - MODEL_NAME=${MODEL_NAME}
+      - API_BASE=${API_BASE}
+      - API_BASE_URL=${API_BASE}
+      - API_KEY=${API_KEY}
+      - MODEL_NAME2=${MODEL_NAME2}
+      - API_KEY2=${API_KEY2}
+      - API_BASE_URL2=${API_BASE2}
+      - OPENSSL_CONF=/etc/ssl/
+      - MILVUS_URI=${MILVUS_URI}
+      - TOKENIZE_URL=${TOKENIZE_URL}
+      - EMBEDDING_URL=${EMBEDDING_URL}
+      - RERANK_URL=${RERANK_URL}
+    working_dir: /src
+    command: uvicorn rag.api:app --host 0.0.0.0 --port 5007

@@ -1,0 +1,140 @@
+{
+  "query": "hello what you can do and introduce this project",
+  "event_file_id": "b4f19b57-2df9-4b9d-a967-1ecc2dbc06a6_20260717-182336",
+  "messages": [
+    {
+      "id": "user-1784280216342",
+      "type": "USER",
+      "content": "hello what you can do and introduce this project",
+      "isUser": true
+    },
+    {
+      "id": "msg-0",
+      "type": "RESULT",
+      "content": "{\"conversation_id\":\"081244a0-9f08-4c5d-b4f2-3da25fb2a10f\"}",
+      "contentType": "text",
+      "metadata": {
+        "action_file": "memory://87d2c0fc-7f51-426e-87f4-fe3eb2b0f6b0_chat_action",
+        "stream_out_type": "/agent/edit",
+        "is_streaming": false,
+        "output": "",
+        "path": "/agent/edit/conversation_id"
+      },
+      "eventId": "44c1936e-bceb-43d7-9c41-2b7869c8eca1",
+      "timestamp": 1784280216780
+    },
+    {
+      "id": "msg-1",
+      "type": "RESULT",
+      "content": "{\"tokens_used\":27271}",
+      "contentType": "text",
+      "metadata": {
+        "action_file": "memory://87d2c0fc-7f51-426e-87f4-fe3eb2b0f6b0_chat_action",
+        "stream_out_type": "/agent/edit",
+        "is_streaming": false,
+        "output": "",
+        "path": "/agent/edit/window_length_change"
+      },
+      "eventId": "e3fa2cbf-346a-4b71-b319-e9a18a95bc99",
+      "timestamp": 1784280216785
+    },
+    {
+      "id": "msg-2",
+      "type": "ERROR",
+      "content": "Connection failed. Error: py\", line 1931, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n  File \"/home/z/.venv/lib/python3.10/site-packages/openai/_base_client.py\", line 1666, in request\n    raise APITimeoutError(request=request) from err\nopenai.APITimeoutError: Request timed out.\n",
+      "metadata": {
+        "agent_event_type": "ErrorEvent"
+      },
+      "eventId": "8401250b-2e96-4c77-8137-64ee09dc1d9e",
+      "timestamp": 1784280309166
+    },
+    {
+      "id": "msg-3",
+      "type": "RESULT",
+      "content": "{\"model_name\":\"v3_chat\",\"elapsed_time\":0,\"first_token_time\":0,\"input_tokens\":0,\"output_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"reasoning_tokens\":0,\"input_cost\":0,\"output_cost\":0,\"cache_read_cost\":0,\"cache_creation_cost\":0,\"reasoning_cost\":0,\"total_cost\":0,\"cost_details\":null,\"speed\":0,\"llm_call\":null,\"router\":null,\"fusion\":null}",
+      "contentType": "token_stat",
+      "metadata": {
+        "action_file": "memory://87d2c0fc-7f51-426e-87f4-fe3eb2b0f6b0_chat_action",
+        "stream_out_type": "/agent/edit",
+        "is_streaming": false,
+        "output": "",
+        "path": "/agent/edit/token_usage",
+        "model_name": "v3_chat",
+        "elapsed_time": 0,
+        "first_token_time": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_cost": 0,
+        "output_cost": 0,
+        "speed": 0
+      },
+      "eventId": "de7d2561-c538-4470-9889-ffc727e465ea",
+      "timestamp": 1784280309171
+    },
+    {
+      "id": "msg-4",
+      "type": "RESULT",
+      "content": "{\"tokens_used\":27355}",
+      "contentType": "text",
+      "metadata": {
+        "action_file": "memory://87d2c0fc-7f51-426e-87f4-fe3eb2b0f6b0_chat_action",
+        "stream_out_type": "/agent/edit",
+        "is_streaming": false,
+        "output": "",
+        "path": "/agent/edit/window_length_change"
+      },
+      "eventId": "680ae344-603b-438d-b5a7-4b77beb056af",
+      "timestamp": 1784280309171
+    },
+    {
+      "id": "msg-5",
+      "type": "ERROR",
+      "content": "Connection failed. Error: py\", line 1931, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n  File \"/home/z/.venv/lib/python3.10/site-packages/openai/_base_client.py\", line 1666, in request\n    raise APITimeoutError(request=request) from err\nopenai.APITimeoutError: Request timed out.\n",
+      "metadata": {
+        "agent_event_type": "ErrorEvent"
+      },
+      "eventId": "29de539f-a292-45fc-8f59-bcef23dc2b00",
+      "timestamp": 1784280401051
+    },
+    {
+      "id": "msg-6",
+      "type": "RESULT",
+      "content": "{\"model_name\":\"v3_chat\",\"elapsed_time\":0,\"first_token_time\":0,\"input_tokens\":0,\"output_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"reasoning_tokens\":0,\"input_cost\":0,\"output_cost\":0,\"cache_read_cost\":0,\"cache_creation_cost\":0,\"reasoning_cost\":0,\"total_cost\":0,\"cost_details\":null,\"speed\":0,\"llm_call\":null,\"router\":null,\"fusion\":null}",
+      "contentType": "token_stat",
+      "metadata": {
+        "action_file": "memory://87d2c0fc-7f51-426e-87f4-fe3eb2b0f6b0_chat_action",
+        "stream_out_type": "/agent/edit",
+        "is_streaming": false,
+        "output": "",
+        "path": "/agent/edit/token_usage",
+        "model_name": "v3_chat",
+        "elapsed_time": 0,
+        "first_token_time": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_cost": 0,
+        "output_cost": 0,
+        "speed": 0
+      },
+      "eventId": "6bf6e12c-0c00-4a41-a11f-b023971333e5",
+      "timestamp": 1784280401051
+    },
+    {
+      "id": "msg-7",
+      "type": "RESULT",
+      "content": "{\"tokens_used\":27438}",
+      "contentType": "text",
+      "metadata": {
+        "action_file": "memory://87d2c0fc-7f51-426e-87f4-fe3eb2b0f6b0_chat_action",
+        "stream_out_type": "/agent/edit",
+        "is_streaming": false,
+        "output": "",
+        "path": "/agent/edit/window_length_change"
+      },
+      "eventId": "45bb4df8-62fa-49fb-8e16-c8205ab7c13d",
+      "timestamp": 1784280401053
+    }
+  ],
+  "status": "error",
+  "timestamp": 1784280401351
+}

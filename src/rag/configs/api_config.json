@@ -1,0 +1,558 @@
+{
+    "project_api": {
+        "info": {
+            "desc": "用于获取中国BQ信息中心项目及其经费等详细情况",
+            "url": "http://192.168.1.172:8080/ebpAppSomRuntime/api/som-mgr-objects/graphStatisticQuery",
+            "create_time": "2024-10-11 10:38:33",
+            "author": "admin"
+        },
+        "fields": {
+            "classKey": "projectInformation",
+            "search": [
+                {
+                    "zh_": "项目来源",
+                    "key": "projectInformation",
+                    "name": "project_source",
+                    "example": [
+                        "",
+                        "军委机关"
+                    ],
+                    "type": "in",
+                    "field_type": "sysCategory"
+                },
+                {
+                    "zh_": "项目类型",
+                    "key": "projectInformation",
+                    "name": "project_type",
+                    "example": "型号研制",
+                    "type": "in",
+                    "field_type": "sysCategory"
+                },
+                {
+                    "zh_": "承研单位",
+                    "key": "projectInformation",
+                    "name": "charge_org",
+                    "example": "201所",
+                    "type": "in",
+                    "field_type": "sysOrg",
+                    "index_type": "3"
+                },
+                {
+                    "zh_": "项目重要性",
+                    "key": "projectInformation",
+                    "name": "project_level",
+                    "example": "集团重大工程",
+                    "type": "equals",
+                    "field_type": "sysOrg"
+                },
+                {
+                    "zh_": "竞标状态",
+                    "key": "projectInformation",
+                    "name": "projectBidding_bidding_status",
+                    "example": "竞标成功",
+                    "type": "in",
+                    "field_type": "sysOrg"
+                },
+                {
+                    "zh_": "建议主管部门",
+                    "key": "projectInformation",
+                    "name": "suggest_admin_dept",
+                    "example": "科技处",
+                    "type": "in",
+                    "field_type": "sysDept",
+                    "index_type": "4"
+                },
+                {
+                    "zh_": "项目标签",
+                    "key": "projectInformation",
+                    "name": "project_flag",
+                    "example": "重大工程",
+                    "type": "in"
+                },
+                {
+                    "zh_": "项目经费",
+                    "key": "projectInformation",
+                    "name": "total_amount",
+                    "example": "大于1000万",
+                    "type": [
+                        "lessThanOrEquals",
+                        "equals",
+                        "greaterThanOrEquals"
+                    ]
+                },
+                {
+                    "zh_": "立项时间",
+                    "key": "projectInformation",
+                    "name": "confirm_date",
+                    "example": [
+                        "2012年1月1日",
+                        "2024年1月1日"
+                    ],
+                    "type": "between",
+                    "is_time": true
+                },
+                {
+                    "zh_": "项目状态",
+                    "key": "projectInformation",
+                    "name": "project_status",
+                    "example": "竞标",
+                    "type": "equals",
+                    "is_time": false
+                },
+                {
+                    "zh_": "项目定位",
+                    "key": "projectInformation",
+                    "name": "project_position",
+                    "example": "中低端",
+                    "type": "equals",
+                    "is_time": false
+                }
+            ],
+            "group": [
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "confirm_date",
+                    "type": "datetime",
+                    "example": "按时间进行统计",
+                    "extr": "{\"format\" : \"year\"}"
+                },
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "project_source",
+                    "type": "syscategory",
+                    "example": "按项目来源统计",
+                    "extr": "{\"categoryKey\" : \"GP.ProjectFrom\"}"
+                },
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "project_type",
+                    "type": "syscategory",
+                    "example": "按项目类型统计",
+                    "extr": "{\"categoryKey\" : \"GP.ProjectType\"}"
+                },
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "project_level",
+                    "type": "sysdic",
+                    "example": "按项目重要性统计",
+                    "extr": "{\"dicKey\" : \"gpProjectStar\"}"
+                },
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "project_status",
+                    "type": "sysdic",
+                    "example": "按项目状态统计",
+                    "extr": "{\"dicKey\" : \"prjStatus\"}"
+                }
+            ],
+            "order": [
+                {
+                    "zh_": "结果形式",
+                    "name": "total_amount",
+                    "key": "projectInformation",
+                    "type": "sum",
+                    "example": "项目经费情况"
+                },
+                {
+                    "zh_": "结果形式",
+                    "key": "projectInformation",
+                    "example": "项目数量情况",
+                    "type": "count"
+                }
+            ]
+        }
+    },
+    "institute_api": {
+        "info": {
+            "desc": "用于获取军队组织机构信息",
+            "url": "",
+            "create_time": "2024-10-17 16:52:35",
+            "author": "admin"
+        },
+        "fields": {
+            "search": [
+                {
+                    "zh_": "机构名称",
+                    "key": "instituteInformation",
+                    "name": "institute_name",
+                    "example": "导弹部队",
+                    "type": "in",
+                    "field_type": "sysCategory"
+                },
+                {
+                    "zh_": "保密级别",
+                    "key": "instituteInformation",
+                    "name": "scrit_level",
+                    "example": "一级",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                },
+                {
+                    "zh_": "组织类型",
+                    "key": "instituteInformation",
+                    "name": "organize_type",
+                    "example": "民兵",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                },
+                {
+                    "zh_": "编制职称",
+                    "key": "instituteInformation",
+                    "name": "institute_human",
+                    "example": "大校",
+                    "type": "equals",
+                    "is_time": false
+                }
+            ],
+            "group": [
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "confirm_date",
+                    "type": "datetime",
+                    "example": "按时间进行统计",
+                    "extr": "{\"format\" : \"year\"}"
+                },
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "project_source",
+                    "type": "syscategory",
+                    "example": "按项目来源统计",
+                    "extr": "{\"categoryKey\" : \"GP.ProjectFrom\"}"
+                },
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "project_type",
+                    "type": "syscategory",
+                    "example": "按项目类型统计",
+                    "extr": "{\"categoryKey\" : \"GP.ProjectType\"}"
+                },
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "project_level",
+                    "type": "sysdic",
+                    "example": "按项目重要性统计",
+                    "extr": "{\"dicKey\" : \"gpProjectStar\"}"
+                },
+                {
+                    "zh_": "分组",
+                    "key": "projectInformation",
+                    "name": "project_status",
+                    "type": "sysdic",
+                    "example": "按项目状态统计",
+                    "extr": "{\"dicKey\" : \"prjStatus\"}"
+                }
+            ],
+            "order": [
+                {
+                    "zh_": "结果形式",
+                    "name": "result_form",
+                    "key": "projectInformation",
+                    "type": "sum",
+                    "example": "项目经费情况",
+                    "extr": "{\"dicKey\" : \"gpProjectStar\"}"
+                },
+                {
+                    "zh_": "结果形式",
+                    "name": "result_form",
+                    "key": "projectInformation",
+                    "example": "项目数量情况",
+                    "type": "count"
+                }
+            ]
+        }
+    },
+    "infoReport_api": {
+        "info": {
+            "desc": "用于获取上报的质量问题和安全问题信息",
+            "url": "",
+            "create_time": "2024-10-24 03:15:09",
+            "author": "admin"
+        },
+        "fields": {
+            "classKey": "infoReport",
+            "search": [
+                {
+                    "zh_": "信息状态",
+                    "key": "infoReport",
+                    "name": "info_status",
+                    "example": "编制中",
+                    "type": "in",
+                    "field_type": "sysDic"
+                },
+                {
+                    "zh_": "信息类别",
+                    "key": "infoReport",
+                    "name": "info_type",
+                    "example": "质量问题",
+                    "type": "in",
+                    "field_type": "sysDic"
+                },
+                {
+                    "zh_": "建议主管业务处",
+                    "key": "infoReport",
+                    "name": "info_suggest_dept",
+                    "example": "科技处",
+                    "type": "in",
+                    "field_type": "sysDept"
+                },
+                {
+                    "zh_": "上报单位",
+                    "key": "infoReport",
+                    "name": "info_report_unit",
+                    "example": "201所",
+                    "type": "in",
+                    "field_type": "sysOrg"
+                },
+                {
+                    "zh_": "上报时间",
+                    "key": "infoReport",
+                    "name": "info_report_date",
+                    "example": "今年",
+                    "type": "between"
+                }
+            ],
+            "group": [
+                {
+                    "zh_": "按时间分组",
+                    "key": "infoReport",
+                    "name": "info_report_date",
+                    "type": "datetime",
+                    "example": "按时间进行统计",
+                    "extr": "{\"format\": \"year\"}"
+                },
+                {
+                    "zh_": "按状态分组",
+                    "key": "infoReport",
+                    "name": "info_status",
+                    "type": "sysdic",
+                    "example": "按状态统计",
+                    "extr": "{\"dicKey\": \"infoReportStatus\"}"
+                },
+                {
+                    "zh_": "按类别分组",
+                    "key": "infoReport",
+                    "name": "info_type",
+                    "type": "sysdic",
+                    "example": "按类型统计",
+                    "extr": "{\"dicKey\": \"information_type\"}"
+                },
+                {
+                    "zh_": "按单位分组",
+                    "key": "infoReport",
+                    "name": "info_report_unit",
+                    "type": "sysorg",
+                    "example": "按单位统计"
+                }
+            ],
+            "order": [
+                {
+                    "zh_": "统计数量",
+                    "key": "infoReport",
+                    "example": "信息数量情况",
+                    "type": "count"
+                }
+            ]
+        }
+    },
+    "equipment_api": {
+        "name": "equipment_api",
+        "alias2name": {
+            "反射雷达": "反射雷达",
+            "装甲车": "装甲车",
+            "战机": "战机",
+            "舰艇": "舰艇",
+            "陆军": "陆军",
+            "空军": "空军"
+        },
+        "name2index": {
+            "反射雷达": [
+                "radar"
+            ],
+            "装甲车": [
+                "car"
+            ],
+            "战机": [
+                "aircraft"
+            ],
+            "舰艇": [
+                "ship"
+            ],
+            "陆军": [
+                "army"
+            ],
+            "空军": [
+                "air"
+            ]
+        },
+        "fields": {
+            "equipment_name": [
+                "",
+                "反射雷达",
+                "装甲车"
+            ],
+            "equipment_type": [
+                "",
+                "装甲车",
+                "战机",
+                "舰艇"
+            ],
+            "equipment_troop": [
+                "空军",
+                "陆军"
+            ]
+        },
+        "info": {
+            "create_time": "2025-10-09 15:57:41",
+            "author": "admin"
+        }
+    },
+    "equipment_api2": {
+        "info": {
+            "create_time": "2024-10-11 10:38:33",
+            "author": "",
+            "desc": "获取装备信息",
+            "url": ""
+        },
+        "fields": {
+            "search": [
+                {
+                    "zh_": "装备名称",
+                    "key": "equipment_name",
+                    "name": "equipment_name",
+                    "example": "equipment_name",
+                    "type": "in",
+                    "field_type": "sysCategory"
+                },
+                {
+                    "zh_": "装备类型",
+                    "key": "equipment_type",
+                    "name": "equipment_type",
+                    "example": "一级",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                },
+                {
+                    "zh_": "隶属部队",
+                    "key": "equipment_troop",
+                    "name": "equipment_troop",
+                    "example": "民兵",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                }
+            ]
+        }
+    },
+    "equipment_api3": {
+        "info": {
+            "create_time": "2025-10-10 13:39:40",
+            "author": "admin"
+        },
+        "fields": {
+            "search": [
+                {
+                    "zh_": "装备名称",
+                    "key": "equipment_name",
+                    "name": "equipment_name",
+                    "example": "equipment_name",
+                    "type": "in",
+                    "field_type": "sysCategory"
+                },
+                {
+                    "zh_": "装备类型",
+                    "key": "equipment_type",
+                    "name": "equipment_type",
+                    "example": "一级",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                },
+                {
+                    "zh_": "隶属部队",
+                    "key": "equipment_troop",
+                    "name": "equipment_troop",
+                    "example": "民兵",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                }
+            ]
+        }
+    },
+    "equipment_api4": {
+        "info": {
+            "create_time": "2025-10-10 13:49:00",
+            "author": "admin"
+        },
+        "fields": {
+            "search": [
+                {
+                    "zh_": "装备名称",
+                    "key": "equipment_name",
+                    "name": "equipment_name",
+                    "example": "equipment_name",
+                    "type": "in",
+                    "field_type": "sysCategory"
+                },
+                {
+                    "zh_": "装备类型",
+                    "key": "equipment_type",
+                    "name": "equipment_type",
+                    "example": "一级",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                },
+                {
+                    "zh_": "隶属部队",
+                    "key": "equipment_troop",
+                    "name": "equipment_troop",
+                    "example": "民兵",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                }
+            ]
+        }
+    },
+    "equipment_api6": {
+        "info": {
+            "desc": "用于获取装备机构6\n",
+            "url": "",
+            "create_time": "2025-10-10 14:12:53",
+            "author": "admin"
+        },
+        "fields": {
+            "search": [
+                {
+                    "zh_": "装备名称",
+                    "key": "equipment_name",
+                    "name": "equipment_name",
+                    "example": "equipment_name",
+                    "type": "in",
+                    "field_type": "sysCategory"
+                },
+                {
+                    "zh_": "装备类型",
+                    "key": "equipment_type",
+                    "name": "equipment_type",
+                    "example": "一级",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                },
+                {
+                    "zh_": "隶属部队",
+                    "key": "equipment_troop",
+                    "name": "equipment_troop",
+                    "example": "民兵",
+                    "type": "in",
+                    "field_type": "sysScrit"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+MODEL_NAME: "/models/Qwen3-32B-AWQ"
+API_KEY: "EMPTY"
+API_BASE_URL: "http://192.168.1.100:8001/v1/"
+
+MODEL_NAME2: "/models/Qwen3-14B-AWQ"
+API_KEY2: "EMPTY"
+API_BASE_URL2: "http://192.168.1.100:8000/v1/"
+
+MILVUS_COLLECTION: "fragments"
+MILVUS_URI: "http://192.168.1.227:19530"
+TOKENIZE_URL: "http://192.168.1.100:7819/tokenize"
+EMBEDDING_URL: "http://192.168.1.100:15006/embeddings"
+MAX_TOKENS: 28000
+MAX_NEW_TOKENS: 2048
+GET_TOKEN_URL: "http://124.16.138.144:8011/v1/chat/get_tokenlen"
+FTP_HOST: "192.168.1.49"
+FTP_PORT: 21
+FTP_USERNAME: "[REDACTED_SECRET]"
+FTP_PASSWORD: "[REDACTED_SECRET]"
+RERANK_URL: "http://192.168.1.100:15006/rerank"
+COLLECTION_NAME: "fragments"
+STATISTIC_URL: "http://192.168.1.172:8080/ebpAppSomRuntime/api/som-mgr-objective-bqxx/project/graphStatisticQuery"
+MAPPING_URL: "http://192.168.1.172:8080/ebpAppSys/api/sys-orgs/queryOrgGuidListByNameAndType"
+
+API_URL: "http://192.168.1.227:12355"
+RAG_URL: "http://192.168.1.227:12357"
+
+BQ_DATA_DESC_URL: "http://192.168.1.172:8080/ebpAppSomRuntime/api/som-mgr-objective-bqxx/project/query"
+OCR_URL: "http://192.168.1.227:5000/ocr-chat"
+BQ_DATA_NO_PAGE: "http://192.168.1.172/gateway/api/query-not-page"
+REQUEST_URL: "http://192.168.1.43:3000/sysorm/api/word/importLocal?_=1769478462691"
+
+JIRA_URL: "http://192.168.1.143:8080"
+JIRA_USER: "[REDACTED_SECRET]"
+JIRA_TOKEN: "[REDACTED_SECRET]"
+JIRA_BOARD: 8
+
+TOKEN: "[REDACTED_SECRET]"

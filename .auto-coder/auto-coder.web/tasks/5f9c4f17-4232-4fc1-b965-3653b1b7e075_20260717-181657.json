@@ -1,0 +1,39 @@
+{
+  "query": "auto-coder.chat",
+  "event_file_id": "5f9c4f17-4232-4fc1-b965-3653b1b7e075_20260717-181657",
+  "messages": [
+    {
+      "id": "user-1784279817213",
+      "type": "USER",
+      "content": "auto-coder.chat",
+      "isUser": true
+    },
+    {
+      "id": "msg-2",
+      "type": "RESULT",
+      "content": "{\"conversation_id\":\"081244a0-9f08-4c5d-b4f2-3da25fb2a10f\"}",
+      "contentType": "text",
+      "metadata": {
+        "action_file": "memory://c9f60ed7-be51-4bcb-82f6-88e978737e67_chat_action",
+        "stream_out_type": "/agent/edit",
+        "is_streaming": false,
+        "output": "",
+        "path": "/agent/edit/conversation_id"
+      },
+      "eventId": "995d9be1-6a9e-4203-96bf-4c70173b9247",
+      "timestamp": 1784279817596
+    },
+    {
+      "id": "msg-3",
+      "type": "ERROR",
+      "content": "Conversation 081244a0-9f08-4c5d-b4f2-3da25fb2a10f is already running",
+      "metadata": {
+        "agent_event_type": "ErrorEvent"
+      },
+      "eventId": "f4507817-dedb-46cf-bd7d-3e8277faf3b2",
+      "timestamp": 1784279817596
+    }
+  ],
+  "status": "error",
+  "timestamp": 1784279817896
+}

@@ -1,0 +1,13 @@
+{
+  "modules": [
+    {
+      "name": "Report",
+      "class": "Report",
+      "method": "analyze",
+      "para":{"viewKey": "project_risk_manage_list","page":1,"pageSize":15,"query":{ "access_bool":"","risk_level":"","risk_num":"","risk_possibility":[],
+    "risk_seriously": "","risk_source":"projectRisk","risk_status":[],"risk_type":"","risk_yuantou":"projectRisk","solve_bool":""},"sort":[]}
+,      "prompt": "你是一位军工项目的管理分析专家，请根据以下项目数据，撰写一份“项目进展报告”。要求以 Markdown 格式输出，结构清晰，内容简洁、专业，适合作为项目月报的正文内容。\n\n请包含以下结构内容：\n1. 项目总体概况\n2. 当前进度状态\n3. 关键里程碑达成情况（表格）\n4. 当前存在问题\n5. 下阶段计划与建议\n\n以下是项目数据：{data_info}",
+      "chart_prompt": "请根据以下任务数据生成python代码，这个python代码满足以下三个要求： 要求1、使用pandas处理数据  要求2、使用matplotlib绘制相应的风险矩阵图 要求3、图表中文字为当前路径下的 wqy-zenhei_0.ttf 这个字体,或者从全局搜索到这个字体 要求4、输出完整python代码，不要解释，不要任何额外文字  数据如下：{data_info}"
+    }
+  ]
+}

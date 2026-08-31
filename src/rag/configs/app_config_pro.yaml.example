@@ -1,0 +1,37 @@
+MODEL_NAME: "your-llm-model"
+API_KEY: "your-api-key"
+API_BASE_URL: "http://host:7819/v1/"
+
+MODEL_NAME2: "your-secondary-model"
+API_KEY2: "your-api-key-2"
+API_BASE_URL2: "http://host:11434/v1/"
+
+MILVUS_COLLECTION: "fragments"
+MILVUS_URI: "http://host.docker.internal:19530"
+TOKENIZE_URL: "http://host:7819/tokenize"
+EMBEDDING_URL: "http://192.168.1.100:5006/embeddings"
+MAX_TOKENS: 28000
+MAX_NEW_TOKENS: 2048
+GET_TOKEN_URL: "http://host:8011/v1/chat/get_tokenlen"
+FTP_HOST: "127.0.0.1"
+FTP_PORT: 21
+FTP_USERNAME: "your-ftp-user"
+FTP_PASSWORD: "your-ftp-password"
+RERANK_URL: "http://192.168.1.100:5006/rerank"
+COLLECTION_NAME: "fragments"
+STATISTIC_URL: "http://host:8080/api/graphStatisticQuery"
+MAPPING_URL: "http://host:8080/api/queryOrgGuidListByNameAndType"
+
+API_URL: "http://host.docker.internal:12355"
+RAG_URL: "http://host.docker.internal:12357"
+
+BQ_DATA_DESC_URL: "http://host:8080/api/query"
+OCR_URL: "http://host:5000/ocr-chat"
+BQ_DATA_NO_PAGE: "http://host/gateway/api/query-not-page"
+
+JIRA_URL: "http://host:8080"
+JIRA_USER: "your-jira-user"
+JIRA_TOKEN: "your-jira-token"
+JIRA_BOARD: 8
+
+TOKEN: "your-jwt-token"

@@ -1,0 +1,39 @@
+{
+  "query": "what you can do and introduce youself",
+  "event_file_id": "de2a2da6-833b-4573-8579-faa24394be30_20260717-181603",
+  "messages": [
+    {
+      "id": "user-1784279763118",
+      "type": "USER",
+      "content": "what you can do and introduce youself",
+      "isUser": true
+    },
+    {
+      "id": "msg-0",
+      "type": "RESULT",
+      "content": "{\"conversation_id\":\"081244a0-9f08-4c5d-b4f2-3da25fb2a10f\"}",
+      "contentType": "text",
+      "metadata": {
+        "action_file": "memory://db0ac0bd-b187-4a10-ac30-58193540a0a3_chat_action",
+        "stream_out_type": "/agent/edit",
+        "is_streaming": false,
+        "output": "",
+        "path": "/agent/edit/conversation_id"
+      },
+      "eventId": "1645b50e-fc26-455c-bb60-605c3a29585f",
+      "timestamp": 1784279763502
+    },
+    {
+      "id": "msg-1",
+      "type": "ERROR",
+      "content": "Conversation 081244a0-9f08-4c5d-b4f2-3da25fb2a10f is already running",
+      "metadata": {
+        "agent_event_type": "ErrorEvent"
+      },
+      "eventId": "06bcb424-fc21-476d-aa2d-6be3994077de",
+      "timestamp": 1784279763503
+    }
+  ],
+  "status": "error",
+  "timestamp": 1784279763804
+}

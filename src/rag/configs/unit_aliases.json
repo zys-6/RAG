@@ -1,0 +1,26 @@
+[
+    {
+        "id": 2,
+        "name": "清华大学",
+        "aliases": [
+            "清华",
+            "Tsinghua University"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "复旦大学",
+        "aliases": [
+            "复旦",
+            "Fudan University"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "名字",
+        "aliases": [
+            "111",
+            "2222"
+        ]
+    }
+]

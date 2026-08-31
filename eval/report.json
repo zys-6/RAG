@@ -1,0 +1,229 @@
+{
+  "golden_path": "/work/eval/retrieval_golden.json",
+  "case_count": 5,
+  "milvus_uri": "http://host.docker.internal:19530",
+  "collection": "fragments",
+  "embedding_url": "http://host.docker.internal:12356/embeddings",
+  "rerank_url": "http://host.docker.internal:12356/rerank",
+  "limit": 30,
+  "k_values": [
+    5,
+    10,
+    30
+  ],
+  "verbose": false,
+  "results": [
+    {
+      "mode": "vector",
+      "metrics": {
+        "case_count": 5,
+        "hit_count": 5,
+        "mrr": 0.5792,
+        "recall@5": 0.8,
+        "recall@10": 0.8,
+        "recall@30": 1.0
+      },
+      "cases": [
+        {
+          "id": "j2ee-lightweight-architecture",
+          "category": "prose",
+          "question": "本论文研究的轻量级架构是什么？",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 30
+        },
+        {
+          "id": "j2ee-keywords",
+          "category": "prose",
+          "question": "这篇J2EE电子政务论文的关键词有哪些？",
+          "gold_rank": 16,
+          "hit": true,
+          "retrieved_count": 30
+        },
+        {
+          "id": "mbse-abstract",
+          "category": "prose",
+          "question": "支持MBSE的系统全过程设计应用框架解决了什么问题？",
+          "gold_rank": 3,
+          "hit": true,
+          "retrieved_count": 30
+        },
+        {
+          "id": "sysml-v2-rfp",
+          "category": "prose",
+          "question": "What are the goals of the OMG SysML v2 RFP?",
+          "gold_rank": 2,
+          "hit": true,
+          "retrieved_count": 30
+        },
+        {
+          "id": "cross-corpus-j2ee-in-mbse-doc",
+          "category": "cross-section",
+          "question": "Struts Spring Hibernate 轻量级架构在电子政务中的设计",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 30
+        }
+      ]
+    },
+    {
+      "mode": "outline",
+      "metrics": {
+        "case_count": 5,
+        "hit_count": 5,
+        "mrr": 0.5792,
+        "recall@5": 0.8,
+        "recall@10": 0.8,
+        "recall@30": 1.0
+      },
+      "cases": [
+        {
+          "id": "j2ee-lightweight-architecture",
+          "category": "prose",
+          "question": "本论文研究的轻量级架构是什么？",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 555
+        },
+        {
+          "id": "j2ee-keywords",
+          "category": "prose",
+          "question": "这篇J2EE电子政务论文的关键词有哪些？",
+          "gold_rank": 16,
+          "hit": true,
+          "retrieved_count": 274
+        },
+        {
+          "id": "mbse-abstract",
+          "category": "prose",
+          "question": "支持MBSE的系统全过程设计应用框架解决了什么问题？",
+          "gold_rank": 3,
+          "hit": true,
+          "retrieved_count": 70
+        },
+        {
+          "id": "sysml-v2-rfp",
+          "category": "prose",
+          "question": "What are the goals of the OMG SysML v2 RFP?",
+          "gold_rank": 2,
+          "hit": true,
+          "retrieved_count": 375
+        },
+        {
+          "id": "cross-corpus-j2ee-in-mbse-doc",
+          "category": "cross-section",
+          "question": "Struts Spring Hibernate 轻量级架构在电子政务中的设计",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 525
+        }
+      ]
+    },
+    {
+      "mode": "rerank",
+      "metrics": {
+        "case_count": 5,
+        "hit_count": 5,
+        "mrr": 0.9,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@30": 1.0
+      },
+      "cases": [
+        {
+          "id": "j2ee-lightweight-architecture",
+          "category": "prose",
+          "question": "本论文研究的轻量级架构是什么？",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 5
+        },
+        {
+          "id": "j2ee-keywords",
+          "category": "prose",
+          "question": "这篇J2EE电子政务论文的关键词有哪些？",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 5
+        },
+        {
+          "id": "mbse-abstract",
+          "category": "prose",
+          "question": "支持MBSE的系统全过程设计应用框架解决了什么问题？",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 6
+        },
+        {
+          "id": "sysml-v2-rfp",
+          "category": "prose",
+          "question": "What are the goals of the OMG SysML v2 RFP?",
+          "gold_rank": 2,
+          "hit": true,
+          "retrieved_count": 6
+        },
+        {
+          "id": "cross-corpus-j2ee-in-mbse-doc",
+          "category": "cross-section",
+          "question": "Struts Spring Hibernate 轻量级架构在电子政务中的设计",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 5
+        }
+      ]
+    },
+    {
+      "mode": "pipeline",
+      "metrics": {
+        "case_count": 5,
+        "hit_count": 5,
+        "mrr": 0.9,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@30": 1.0
+      },
+      "cases": [
+        {
+          "id": "j2ee-lightweight-architecture",
+          "category": "prose",
+          "question": "本论文研究的轻量级架构是什么？",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 7
+        },
+        {
+          "id": "j2ee-keywords",
+          "category": "prose",
+          "question": "这篇J2EE电子政务论文的关键词有哪些？",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 8
+        },
+        {
+          "id": "mbse-abstract",
+          "category": "prose",
+          "question": "支持MBSE的系统全过程设计应用框架解决了什么问题？",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 8
+        },
+        {
+          "id": "sysml-v2-rfp",
+          "category": "prose",
+          "question": "What are the goals of the OMG SysML v2 RFP?",
+          "gold_rank": 2,
+          "hit": true,
+          "retrieved_count": 8
+        },
+        {
+          "id": "cross-corpus-j2ee-in-mbse-doc",
+          "category": "cross-section",
+          "question": "Struts Spring Hibernate 轻量级架构在电子政务中的设计",
+          "gold_rank": 1,
+          "hit": true,
+          "retrieved_count": 8
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+    "c0c1945bcbb4a682ffc96ca7025d8505": {
+        "task_id": "c0c1945bcbb4a682ffc96ca7025d8505",
+        "user_name": "admin",
+        "file_name": "static/tmp/ad706bc1e99ecb6be5e60aeee44725a1/selenium/_基于Selenium的Web应用测试框架的开发.caj",
+        "file_size": 1871.806640625,
+        "task_start_time": "2025-04-08 02:35:30",
+        "task_end_time": "",
+        "task_status": "failed"
+    },
+    "fe97230f3ea3470d3d341718d15543f1": {
+        "task_id": "fe97230f3ea3470d3d341718d15543f1",
+        "user_name": "admin",
+        "file_name": "static/tmp/ad706bc1e99ecb6be5e60aeee44725a1/selenium/_基于Selenium的Web自动化测试.caj",
+        "file_size": 6343.37890625,
+        "task_start_time": "2025-04-08 02:35:30",
+        "task_end_time": "",
+        "task_status": "failed"
+    },
+    "409bb16eff2e3d246050797fbd931724": {
+        "task_id": "409bb16eff2e3d246050797fbd931724",
+        "user_name": "admin",
+        "file_name": "static/tmp/ad706bc1e99ecb6be5e60aeee44725a1/selenium/_基于Selenium的Web自动化测试框架的设计与实现.caj",
+        "file_size": 2304.87109375,
+        "task_start_time": "2025-04-08 02:35:30",
+        "task_end_time": "",
+        "task_status": "failed"
+    },
+    "0948875f432dd13828500bf67dfe33ef": {
+        "task_id": "0948875f432dd13828500bf67dfe33ef",
+        "user_name": "admin",
+        "file_name": "static/tmp/ad706bc1e99ecb6be5e60aeee44725a1/selenium/_基于Selenium自动化测试框架的改进与应用.caj",
+        "file_size": 11168.892578125,
+        "task_start_time": "2025-04-08 02:35:30",
+        "task_end_time": "",
+        "task_status": "failed"
+    },
+    "4bc701f925f29989daf6cc5fca1da82e": {
+        "task_id": "4bc701f925f29989daf6cc5fca1da82e",
+        "user_name": "admin",
+        "file_name": "static\\tmp\\437b8f5a0ce6cd1ea95ec5c952735107\\caj\\如何确立学术问题——文献综述撰写的目的与方法_周大鸣.caj",
+        "file_size": 1276.4951171875,
+        "task_start_time": "2025-04-09 15:43:22",
+        "task_end_time": "",
+        "task_status": "success"
+    },
+    "2b020b2e4e2c154f0aa6c6ae3873e9a1": {
+        "task_id": "2b020b2e4e2c154f0aa6c6ae3873e9a1",
+        "user_name": "admin",
+        "file_name": "static\\tmp\\437b8f5a0ce6cd1ea95ec5c952735107\\caj\\如何确立学术问题——文献综述撰写的目的与方法_周大鸣.pdf",
+        "file_size": 1361.8974609375,
+        "task_start_time": "2025-04-09 15:43:22",
+        "task_end_time": "",
+        "task_status": "failed"
+    }
+}
