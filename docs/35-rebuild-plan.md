@@ -71,7 +71,7 @@ Goal: improve naming and layout without changing external behavior.
 ### Checklist
 
 - [x] Inventory naming problems and typo-like modules that can be cleaned safely.
-- [ ] Clean obviously confusing names such as `knowledge_mange.py` only with compatibility shims or import-safe aliases where needed.
+- [x] Clean obviously confusing names such as `knowledge_mange.py` only with compatibility shims or import-safe aliases where needed.
 - [ ] Review duplicate or cross-layer imports between `api`, `embedding`, and `rag`.
 - [ ] Remove or quarantine obvious backup, temporary, or runtime-artifact files that do not belong in active source trees.
 - [x] Reduce duplicate router wiring or registration only after Stage 1 checks exist.
@@ -88,6 +88,7 @@ Stage 2 progress in `~/rag` on August 31, 2026:
 
 - [x] Removed the duplicate `qa_router` registration from `src/rag/api.py` after Stage 1 route/OpenAPI checks were in place.
 - [x] Added `docs/39-stage2-inventory.md` to record typo-like names, duplicate asset placement, cross-layer imports, and runtime-artifact candidates before broader cleanup.
+- [x] Switched the runtime import to `rag.controllers.knowledge_manage` and kept `knowledge_mange.py` as the compatibility shim path.
 
 ## Stage 3 - Isolated bug fixes and behavior corrections
 

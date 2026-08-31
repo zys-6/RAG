@@ -16,7 +16,7 @@ These names are confusing enough to justify cleanup, but they are currently refe
 
 | Current path/name | Current usage | Risk | Recommended cleanup |
 |---|---|---|---|
-| `src/rag/controllers/knowledge_mange.py` | imported by `src/rag/api.py`; documented in multiple docs | direct rename would break imports and historical references | add a correctly named sibling such as `knowledge_manage.py`, move implementation there, keep `knowledge_mange.py` as a compatibility shim |
+| `src/rag/controllers/knowledge_mange.py` | historical path still referenced in docs; runtime import can be redirected safely | direct rename would break historical references and any stale imports | add `knowledge_manage.py` as the canonical module, keep `knowledge_mange.py` as a compatibility shim |
 | `moudle.json` | referenced by `src/rag/controllers/init/RelectTest.py`; duplicates appear under `controllers/init`, `controllers/reflectAndDoc`, and `services` | typo plus ambiguous ownership | standardize on `modules.json` where code is still relevant; keep legacy file names only where a shim/example loader is needed |
 | `src/rag/utils/request_llm0530.py` | still present as a version-stamped helper module | date-stamped naming obscures whether it is active or archival | determine whether it is live; if active, rename to a functional name; if not, move to an archive/quarantine location |
 
@@ -73,10 +73,9 @@ Do not delete these blindly during Stage 2. First decide which directories are:
 
 These are the safest next steps after this inventory.
 
-1. Introduce a compatibility shim for `knowledge_mange.py` and move the implementation to a correctly named module.
-2. Document and standardize one canonical home for chart/render support assets used by report generation.
-3. Quarantine or ignore `__pycache__/` and generated `.docx`/`.xlsx` runtime outputs after confirming they are not required fixtures.
-4. Decide whether `request_llm0530.py` is active code, an experiment snapshot, or dead backup.
+1. Document and standardize one canonical home for chart/render support assets used by report generation.
+2. Quarantine or ignore `__pycache__/` and generated `.docx`/`.xlsx` runtime outputs after confirming they are not required fixtures.
+3. Decide whether `request_llm0530.py` is active code, an experiment snapshot, or dead backup.
 
 ## 6. Explicitly deferred from this inventory step
 

@@ -7,7 +7,7 @@ from fastapi.openapi.docs import get_swagger_ui_html
 from rag.controllers.qa import qa_router
 from rag.controllers.api_manage import manage_router
 from rag.controllers.agent_manage import agent_router
-from rag.controllers.knowledge_mange import knowledge_router
+from rag.controllers.knowledge_manage import knowledge_router
 from rag.controllers.unit_aliases import unit_router
 
 logger = logging.getLogger(__name__)
@@ -37,7 +37,6 @@ app.include_router(qa_router,tags=["问答"])
 app.include_router(unit_router,tags=["团队别名管理"])
 
 # app.include_router(user_config_router,tags=["配置模板管理"])
-
 
 
 
